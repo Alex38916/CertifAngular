@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../service/user.service';
 import { ActivatedRoute } from '@angular/router';
 
-const url = "http://localhost:8080/user";
+const url = "http://localhost:8080/user/find";
 
 @Component({
   selector: 'app-show',

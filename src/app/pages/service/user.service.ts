@@ -25,7 +25,7 @@ export class UserService {
   //GET By Id
   public getuserById(url: string, id: number){
     url = `${url}/${id}`;
-    this.httpClient.get(url).subscribe(response => this._user.next(response));
+    this.httpClient.get(url).subscribe(response => this.getUser.next(response));
   }
 
   //POST
@@ -59,6 +59,9 @@ export class UserService {
 
 
   //DELETE
+  public deleteUser(url: string, id: number) {
+    this.httpClient.delete(`${url}/${id}`);
+  }
 
 
 

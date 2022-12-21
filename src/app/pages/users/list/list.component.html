@@ -6,7 +6,7 @@
 <!-- Liste des utilisateurs -->
 <ul *ngIf="users.length; else noBookMessage">
     <li *ngFor="let user of users; let i = index">
-        <a [routerLink]="['/user', user.id]">{{ user.firstname }} {{ user.lastname }}</a>
+        <a [routerLink]="['/user/find', user.id]">{{ user.firstname }} {{ user.lastname }}</a>
     </li>
 </ul>
 
