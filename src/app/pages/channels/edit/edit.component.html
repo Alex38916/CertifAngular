@@ -1,1 +1,53 @@
-<p>edit works!</p>
+<h2>Modifier le canal</h2>
+<!-- Todo2 : Faire en sorte de ne pas pouvoir modifier le canal général (ni le supprimer) -->
+
+<div class="container">
+    <form [formGroup]="form" novalidate>
+        <!-- Name -->
+        <div class="form-group">
+            <label for="name">Nom</label>
+            <input
+                type="text" 
+                class="form-control" 
+                id="name" 
+                formControlName="name">
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input
+                type="text" 
+                class="form-control" 
+                id="description" 
+                formControlName="description">
+        </div>
+
+        <!-- Date de création -->
+        <!-- Todo : faire en sorte de ne pas pouvoir modifier la date de création? -->
+        <div class="form-group">
+            <label for="createdAt">Date de création</label>
+            <input
+                type="text" 
+                class="form-control" 
+                id="createdAt" 
+                formControlName="createdAt">
+        </div>
+
+        <!-- Date de création -->
+        <!-- Todo faire en sorte que la date de modification se mette à jour auto avec la validation du formulaire -->
+        <div class="form-group">
+            <label for="updatedAt">Date de modification</label>
+            <input
+                type="text" 
+                class="form-control" 
+                id="updatedAt" 
+                formControlName="updatedAt">
+        </div>
+
+        <!-- Submit btn -->
+        <button type="button" (click)="updateChannel()">Valider la modification</button>
+
+    </form>
+
+</div>
