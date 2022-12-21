@@ -8,6 +8,7 @@ import { ShowComponent } from './users/show/show.component';
 import { ListComponent } from './users/list/list.component';
 import { DeleteComponent } from './users/delete/delete.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     HttpClientModule,
+    ReactiveFormsModule,
     PagesRoutingModule
   ]
 })
