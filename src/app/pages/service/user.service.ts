@@ -29,7 +29,6 @@ export class UserService {
   }
 
   //POST
-  //A MODIFIER
   public createUser(url: string, user: any){
     const headers = new HttpHeaders({
       'Content-Type' : 'application/json',
@@ -44,7 +43,9 @@ export class UserService {
   }
 
   //PUT
-  public editUser(url: string, id: number | undefined, user: any) {
+  public editUser(url: string, id: number | undefined, user: any): void {
+
+    url = `${url}/${id}`;
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -54,12 +55,20 @@ export class UserService {
       headers
     }
 
-    this.httpClient.put(`${url}/${id}`, user);
+    // this.httpClient.patch(url, user, options)
+    //   .subscribe(response => console.log(response));
+      this.httpClient.put(url, user, options)
+      .subscribe(response => console.log(response));
   }
 
 
   //DELETE
-
+  public deleteUser(url: string, id: number|undefined): void {
+    url = `${url}/${id}`;
+    
+    this.httpClient.delete(url)
+      .subscribe(response => console.log(response));
+  }
 
 
 

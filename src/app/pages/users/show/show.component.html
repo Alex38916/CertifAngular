@@ -1,6 +1,13 @@
 <h2>{{user?.lastname}} {{user?.firstname}}</h2>
 
-<!-- {{user | json}} -->
+<!--{{user | json}}-->
 
 <div>Pseudo : {{user?.pseudo}}</div>
-<div>Mail : {{user?.email}</div>
+<div>Mail : {{user?.email}}</div>
+
+<button type="button" [routerLink]="['/user/put', user.id]">Modifier</button><br>
+<!-- <button type="button" [routerLink]="['/user/delete', user.id]" (click)="exportDelete()">Supprimer</button> -->
+<!-- <button type="button" (click)="exportDelete()">Supprimer</button> -->
+<button type="button" [routerLink]="['/user/delete', user.id]">Supprimer</button> 
+
+

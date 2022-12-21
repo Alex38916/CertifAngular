@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { UserService } from '../../service/user.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
-const url = "http://localhost:8080/user/post";
+const url = "http://localhost:8080/user/put";
 
 @Component({
   selector: 'app-edit',
@@ -13,39 +13,45 @@ const url = "http://localhost:8080/user/post";
 export class EditComponent implements OnInit {
 
   public id?: number;
-  public user: any;
-
-  public form = new FormGroup({
-    lastname: new FormControl(),
-    firstname: new FormControl(),
-    pseudo: new FormControl(),
-    email: new FormControl(),
-    password: new FormControl()
-  });
+  public form: FormGroup;
 
   constructor(
     private userService: UserService,
-    private route: ActivatedRoute
-  ){}
+    private route: ActivatedRoute,
+    private router: Router,
+    private formBuilder: FormBuilder
+  ){
+    this.form = this.formBuilder.group({
+      firstname: [],
+      lastname: [],
+      pseudo: [],
+      email: [],
+      password: []
+    })
+  }
 
   ngOnInit(): void {
 
     this.id = Number(this.route.snapshot.paramMap.get('id'));
 
-    this.user = this.userService.getuserById(url, this.id);
-
+    this.userService.getuserById(url, this.id);
     this.userService.getUser.subscribe(data => {
-      this.user = data;
-      this.form.controls.lastname = this.user.lastname;
-      this.form.controls.firstname = this.user.firstname;
-      this.form.controls.pseudo = this.user.pseudo;
-      this.form.controls.email = this.user.email;
-      this.form.controls.password = this.user.password;
+
+       this.form.patchValue({
+        firstname: data.firstname,
+        lastname: data.lastname,
+        pseudo: data.pseudo,
+        email: data.email,
+        password: data.password
+       });
+
     });
   }
 
   public updateUser(): void {
     this.userService.editUser(url, this.id, this.form.value);
+    // this.router.navigate(['/user/find', this.id]);
+    this.router.navigate(['/user/list']);
   }
 
 }
