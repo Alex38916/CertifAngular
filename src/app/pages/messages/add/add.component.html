@@ -2,19 +2,36 @@
 
 <div class="container">
     <form>
+        <!-- Contenu -->
         <div class="form-group">
             <label for="content">Contenu</label>
             <!-- <textarea class="form-control" id="content" [formControl]="form.controls.content"></textarea> -->
             <input type="text" class="form-control" id="content" [formControl]="form.controls.content">
         </div>
-        <div class="form-group">
+
+        <!-- Date de création -->
+        <!-- <div class="form-group">
             <label for="createdAt">Créé le</label>
             <input type="datetime-local" class="form-control" id="createdAt" [formControl]="form.controls.createdAt">
-        </div>
-        <div class="form-group">
+        </div> -->
+
+        <!-- Date de mise à jour -->
+        <!-- <div class="form-group">
             <label for="updatedAt">Mis à jour le</label>
             <input type="datetime-local" class="form-control" id="updatedAt" [formControl]="form.controls.updatedAt">
-        </div>
+        </div> -->
+
+        <!-- Id de l'utilisateur -->
+        <!-- <div class="form-group">
+            <label for="user_id">Mis à jour le</label>
+            <input type="number" class="form-control" id="user_id" [formControl]="form.controls.updatedAt">
+        </div> -->
+
+        <!-- Id du canal -->
+        <!-- <div class="form-group">
+            <label for="channel_id">Mis à jour le</label>
+            <input type="datetime-local" class="form-control" id="updatedAt" [formControl]="form.controls.updatedAt">
+        </div> -->
         <button type="button" (click)="submitMessage()">Envoyer</button>
     </form>
 </div>

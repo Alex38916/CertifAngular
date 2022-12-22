@@ -28,7 +28,7 @@ export class MessageService {
   }
 
   //POST
-  public createMessage(url: string, message: any){
+  public createMessage(url: string, message: any, userId: any, channelId: any){
     const headers = new HttpHeaders({
       'Content-Type' : 'application/json',
     });
@@ -36,6 +36,12 @@ export class MessageService {
     const options = {
       headers
     };
+
+    message.user = {};
+    message.channel = {};
+    message.user.id = userId;
+    message.channel.id = channelId;
+    console.log(message);
 
     this.httpClient.post(url, message, options)
       .subscribe(response => console.log(response));
