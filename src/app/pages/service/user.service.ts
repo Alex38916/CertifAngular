@@ -23,14 +23,13 @@ export class UserService {
     }
 
   //GET By Id
-  public getBookById(url: string, id: number){
+  public getuserById(url: string, id: number){
     url = `${url}/${id}`;
-    this.httpClient.get(url).subscribe(response => this._user.next(response));
+    this.httpClient.get(url).subscribe(response => this.getUser.next(response));
   }
 
   //POST
-  //A MODIFIER
-  public createBook(url: string, user: any){
+  public createUser(url: string, user: any){
     const headers = new HttpHeaders({
       'Content-Type' : 'application/json',
     });
@@ -44,10 +43,32 @@ export class UserService {
   }
 
   //PUT
+  public editUser(url: string, id: number | undefined, user: any): void {
+
+    url = `${url}/${id}`;
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+
+    const options = {
+      headers
+    }
+
+    // this.httpClient.patch(url, user, options)
+    //   .subscribe(response => console.log(response));
+      this.httpClient.put(url, user, options)
+      .subscribe(response => console.log(response));
+  }
 
 
   //DELETE
-
+  public deleteUser(url: string, id: number|undefined): void {
+    url = `${url}/${id}`;
+    
+    this.httpClient.delete(url)
+      .subscribe(response => console.log(response));
+  }
 
 
 
