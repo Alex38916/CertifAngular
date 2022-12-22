@@ -14,8 +14,10 @@ export class AddComponent {
 
   public form = new FormGroup({
     content: new FormControl(),
-    createdAt: new FormControl(),
-    updatedAt: new FormControl()
+    // createdAt: new FormControl(new Date),
+    // updatedAt: new FormControl(),
+    // user_id: new FormControl(),
+    // channel_id: new FormControl()
   });
 
   constructor(
@@ -24,8 +26,13 @@ export class AddComponent {
   ){}
 
   public submitMessage(): void {
-    this.messageService.createMessage(url, this.form.value);
-    this.router.navigate(['/message/list']);
+    let userId = 4;
+    let channelId = 3;
+    this.messageService.createMessage(url, this.form.value, userId, channelId);
+    setTimeout(()=>{
+      this.router.navigate(['/message/list']);
+    },1000);
+    
   }
 
 }

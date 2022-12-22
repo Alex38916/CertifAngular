@@ -2,10 +2,10 @@
 
 <!-- Lien vers l'ajout d'un message -->
 <!-- <a href="/message/post">Rédiger un message</a> -->
+<a routerLink="/message/post">Rédiger un message</a>
 
 <!-- Lien déclencheur du modal d'ajout -->
 <!-- <a routerLink="/message/post" data-toggle="modal" data-target="#modalAjoutMessage">Rédiger un message</a> -->
-<a routerLink="/message/post">Rédiger un message</a>
 
 <!-- Liste des messages -->
 <ul *ngIf="messages.length; else noMessageMessage">

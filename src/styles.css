@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+
+html {
+    font-size: 14px;
+    font-family: 'PT Sans', Georgia, serif; }
+
+body{
+     background-color: #f4f7f6;
+    margin-top:20px;
+}
+
+.navbar-brand {
+     position: fixed;
+     top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 50px;
+    background: cadetblue;
+}
+

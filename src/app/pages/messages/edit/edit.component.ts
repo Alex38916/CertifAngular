@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from '../../service/message.service';
 
@@ -18,8 +18,8 @@ export class EditComponent implements OnInit {
   constructor(
     private messageService: MessageService,
     private route: ActivatedRoute,
-    private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private fb: FormBuilder
   ){
     this.form = this.fb.group({
       content: [],

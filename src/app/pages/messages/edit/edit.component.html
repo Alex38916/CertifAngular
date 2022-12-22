@@ -4,16 +4,25 @@
     <form [formGroup]="form" novalidate>
         <div class="form-group">
             <label for="content">Contenu</label>
-            <input type="text" class="form-control" id="content" formControlName="content">
+            <input type="text" 
+            class="form-control" 
+            id="content" 
+            formControlName="content">
         </div>
         <div class="form-group">
             <label for="createdAt">Créé le</label>
-            <input type="text" class="form-control" id="createdAt" formControlName="createdAt">
+            <input type="text" 
+            class="form-control" 
+            id="createdAt" 
+            formControlName="createdAt">
         </div>
         <div class="form-group">
             <label for="updatedAt">Mis à jour le</label>
-            <input type="text" class="form-control" id="updatedAt" formControlName="updatedAt">
+            <input type="text" 
+            class="form-control" 
+            id="updatedAt" 
+            formControlName="updatedAt">
         </div>
-        <button type="submit" (click)="submitMessage()">Valider</button>
+        <button type="button" (click)="submitMessage()">Valider</button>
     </form>
 </div>

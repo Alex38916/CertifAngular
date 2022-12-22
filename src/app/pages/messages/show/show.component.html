@@ -1,6 +1,7 @@
-<h2>Message n° {{message.id}}</h2>
+<!-- <h2>Message n° {{message.id}}</h2> -->
+<h2>Message : </h2>
 
 <div>Contenu : {{message.content}}</div>
 
-<button type="submit" routerLink="['/message/put']">Modifier</button>
-<button type="submit" routerLink="['/message/delete']">Supprimer</button>
+<button type="button" [routerLink]="['/message/put', message.id]">Modifier</button>
+<button type="button" [routerLink]="['/message/delete', message.id]">Supprimer</button>
