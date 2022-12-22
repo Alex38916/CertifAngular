@@ -1,7 +1,9 @@
-<!-- <h2>Message n° {{message.id}}</h2> -->
-<h2>Message : </h2>
+<div class="container">
+    <h2>Message : </h2>
 
-<div>Contenu : {{message.content}}</div>
+    <div>Contenu : {{message.content}}</div>
 
-<button type="button" [routerLink]="['/message/put', message.id]">Modifier</button>
-<button type="button" [routerLink]="['/message/delete', message.id]">Supprimer</button>
+    <button type="button" [routerLink]="['/message/put', message.id]">Modifier</button>
+    <button type="button" [routerLink]="['/message/delete', message.id]">Supprimer</button>
+</div>
+
