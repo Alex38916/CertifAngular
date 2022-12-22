@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { MessageService } from './message.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ export class ChannelService {
     //Propriétés Observables
     private _channels = new BehaviorSubject<any>([]);
     private _channel = new BehaviorSubject<any>({});
+
+    private _messages = new BehaviorSubject<any>([]);
     
   
     constructor(
@@ -68,6 +71,19 @@ export class ChannelService {
         .subscribe(response => console.log(response));
     }
   
+    //Get Messages By Channel
+    public getMessageByChannel(url: string, id: number|undefined) {
+      url = `${url}/${id}`;
+
+      
+      this.httpClient.get(url).subscribe(response => {
+        this._messages.next(response)
+      })
+    }
+
+    public getMessages(){
+      return this._messages;
+    }
   
   
     //Getter et Setter

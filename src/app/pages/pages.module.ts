@@ -13,6 +13,7 @@ import { EditComponent as ChannelEdit } from './channels/edit/edit.component';
 import { ShowComponent as ChannelShow } from './channels/show/show.component';
 import { ListComponent as ChannelList } from './channels/list/list.component';
 import { DeleteComponent as ChannelDelete } from './channels/delete/delete.component';
+import { GetMessagesComponent } from './channels/get-messages/get-messages.component';
 
 import { AddComponent as MessageAdd} from './messages/add/add.component';
 import { EditComponent as MessageEdit } from './messages/edit/edit.component';
@@ -22,6 +23,7 @@ import { DeleteComponent as MessageDelete} from './messages/delete/delete.compon
 
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -37,11 +39,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     ChannelShow, 
     ChannelList, 
     ChannelDelete,
+    GetMessagesComponent,
     MessageAdd,
     MessageEdit,
     MessageShow,
     MessageList,
-    MessageDelete
+    MessageDelete,
+    GetMessagesComponent
   ],
   imports: [
     CommonModule,

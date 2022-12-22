@@ -1,4 +1,4 @@
-<h2>{{channel?.name}}</h2>
+<!-- <h2>{{channel?.name}}</h2>
 
 <div>Description : {{channel?.description}}</div>
 <div>Date de création : {{channel?.createdAt}}</div>
@@ -6,6 +6,19 @@
 
 <button type="button" [routerLink]="['/channel/put', channel.id]">Modifier</button><br>
 
+<button type="button" [routerLink]="['/channel/delete', channel.id]">Supprimer</button>  -->
+
+<h2>{{channel?.name}}</h2>
+
+<div>Description : {{channel?.description}}</div>
+<div>Date de création : {{channel?.createdAt}}</div>
+<div>Date de modification : {{channel?.updatedAt}}</div>
+
+<!-- Boutons de gestion du canal -->
+<button type="button" [routerLink]="['/channel/put', channel.id]">Modifier</button><br>
 <button type="button" [routerLink]="['/channel/delete', channel.id]">Supprimer</button> 
+
+<!-- Affichage des messages -->
+<button type="button" [routerLink]="['/channel/listMessages', channel.id]">Afficher les messages</button>
 
 
