@@ -5,11 +5,14 @@ import { DeleteComponent as ChannelDelete} from './channels/delete/delete.compon
 import { EditComponent as ChannelEdit } from './channels/edit/edit.component';
 import { ListComponent as ChannelList } from './channels/list/list.component';
 import { ShowComponent as ChannelShow } from './channels/show/show.component';
+import { GetMessagesComponent } from './channels/get-messages/get-messages.component';
+
 import { AddComponent as MessageAdd} from './messages/add/add.component';
 import { DeleteComponent as MessageDelete } from './messages/delete/delete.component';
 import { EditComponent as MessageEdit} from './messages/edit/edit.component';
 import { ListComponent as MessageList} from './messages/list/list.component';
 import { ShowComponent as MessageShow } from './messages/show/show.component';
+
 import { AddComponent as UserAdd } from './users/add/add.component';
 import { DeleteComponent as UserDelete } from './users/delete/delete.component';
 import { EditComponent as UserEdit} from './users/edit/edit.component';
@@ -107,6 +110,11 @@ const routes: Routes = [
         //Delete
         path: 'delete/:id',
         component: ChannelDelete
+      },
+      {
+        //Get Messages
+        path: 'listMessages/:id',
+        component: GetMessagesComponent
       }
     ]
   },

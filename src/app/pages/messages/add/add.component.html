@@ -1,11 +1,10 @@
 <h2>Ajouter un message</h2>
-
-<div class="container">
+ 
+ <div class="container">
     <form>
-        <!-- Contenu -->
+
         <div class="form-group">
             <label for="content">Contenu</label>
-            <!-- <textarea class="form-control" id="content" [formControl]="form.controls.content"></textarea> -->
             <input type="text" class="form-control" id="content" [formControl]="form.controls.content">
         </div>
 
@@ -13,31 +12,34 @@
         <!-- <div class="form-group">
             <label for="createdAt">Créé le</label>
             <input type="datetime-local" class="form-control" id="createdAt" [formControl]="form.controls.createdAt">
-        </div> -->
+        </div>  -->
 
         <!-- Date de mise à jour -->
         <!-- <div class="form-group">
             <label for="updatedAt">Mis à jour le</label>
             <input type="datetime-local" class="form-control" id="updatedAt" [formControl]="form.controls.updatedAt">
-        </div> -->
+        </div>  -->
 
+        <!-- TODO ID utilisateur et channel -->
         <!-- Id de l'utilisateur -->
         <!-- <div class="form-group">
             <label for="user_id">Mis à jour le</label>
             <input type="number" class="form-control" id="user_id" [formControl]="form.controls.updatedAt">
-        </div> -->
+        </div>  -->
 
         <!-- Id du canal -->
         <!-- <div class="form-group">
             <label for="channel_id">Mis à jour le</label>
             <input type="datetime-local" class="form-control" id="updatedAt" [formControl]="form.controls.updatedAt">
-        </div> -->
+        </div>  -->
+
         <button type="button" (click)="submitMessage()">Envoyer</button>
     </form>
-</div>
+</div>  
 
-<!-- Modal ajout message
-<div class="modal fade" id="modalAjoutMessage" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+<!-- Modal ajout message -->
+<!-- <div class="modal fade" id="modalAjoutMessage" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -48,11 +50,13 @@
             </div>
             <div class="modal-body">
                 <form>
+
                     <div class="form-row">
                         <div class="col-md-4">
                             <label for="content">Contenu</label>
                             <textarea class="form-control" id="content" [formControl]="form.controls.content"></textarea>
                         </div>
+
                         <div class="col-md-4">
                             <label for="createdAt">Créé le</label>
                             <input type="text" class="form-control" id="createdAt" [formControl]="form.controls.createdAt">
@@ -72,6 +76,7 @@
                             </span>
                             Valider
                         </button>
+                    </div>
                     </div>
                 </form>
             </div>
