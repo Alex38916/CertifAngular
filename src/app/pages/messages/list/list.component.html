@@ -1,1 +1,19 @@
-<p>list works!</p>
+<h2>{{ pageTitle }}</h2>
+
+<!-- Lien vers l'ajout d'un message -->
+<!-- <a href="/message/post">Rédiger un message</a> -->
+<a routerLink="/message/post">Rédiger un message</a>
+
+<!-- Lien déclencheur du modal d'ajout -->
+<!-- <a routerLink="/message/post" data-toggle="modal" data-target="#modalAjoutMessage">Rédiger un message</a> -->
+
+<!-- Liste des messages -->
+<ul *ngIf="messages.length; else noMessageMessage">
+    <li *ngFor="let message of messages; let i = index">
+        <a [routerLink]="['/message/list', message.id]">{{message.createdAt}} {{ message.content }}</a>
+    </li>
+</ul>
+
+<ng-template #noMessageMessage>
+    <div>Aucun Utilisateur en BDD</div>
+</ng-template>

@@ -1,1 +1,60 @@
-<p>edit works!</p>
+<h2>Modifier l'utilisateur</h2>
+
+<div class="container">
+    <form [formGroup]="form" novalidate>
+        <!-- Firstname -->
+        <div class="form-group">
+            <label for="firstname">Prénom</label>
+            <input
+                type="text" 
+                class="form-control" 
+                id="firstname" 
+                formControlName="firstname">
+        </div>
+
+        <!-- Lastname -->
+        <div class="form-group">
+            <label for="lastname">Nom de famille</label>
+            <input
+                type="text" 
+                class="form-control" 
+                id="lastname" 
+                formControlName="lastname">
+        </div>
+
+        <!-- Pseudo -->
+        <div class="form-group">
+            <label for="pseudo">Pseudo</label>
+            <input
+                type="text" 
+                class="form-control" 
+                id="pseudo" 
+                formControlName="pseudo">
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input
+                type="email" 
+                class="form-control" 
+                id="email" 
+                formControlName="email">
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input
+                type="password" 
+                class="form-control" 
+                id="password" 
+                formControlName="password">
+        </div>
+
+        <!-- Submit btn -->
+        <button type="button" (click)="updateUser()">Valider la modification</button>
+
+    </form>
+
+</div>

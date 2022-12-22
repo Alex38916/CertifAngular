@@ -1,1 +1,15 @@
-<p>list works!</p>
+<h2>{{ pageTitle }}</h2>
+
+<!-- Lien vers l'ajout d'un canal -->
+<a routerLink="/channel/post">Ajouter un nouveau canal</a>
+
+<!-- Liste des canaux -->
+<ul *ngIf="channels.length; else noBookMessage">
+    <li *ngFor="let channel of channels; let i = index">
+        <a [routerLink]="['/channel/find', channel.id]">{{ channel.name }}</a>
+    </li>
+</ul>
+
+<ng-template #noBookMessage>
+    <div>Aucun canal en BDD</div>
+</ng-template>
