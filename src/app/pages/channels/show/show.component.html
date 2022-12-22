@@ -1,24 +1,18 @@
-<!-- <h2>{{channel?.name}}</h2>
+<div class="container">
+    <h2>{{channel?.name}}</h2>
 
-<div>Description : {{channel?.description}}</div>
-<div>Date de création : {{channel?.createdAt}}</div>
-<div>Date de modification : {{channel?.updatedAt}}</div>
+    <div>Description : {{channel?.description}}</div>
+    <div>Date de création : {{channel?.createdAt}}</div>
+    <div>Date de modification : {{channel?.updatedAt}}</div>
 
-<button type="button" [routerLink]="['/channel/put', channel.id]">Modifier</button><br>
+    <!-- Boutons de gestion du canal -->
+    <button  type="button" class="btn btn-primary" [routerLink]="['/channel/put', channel.id]">Modifier</button>   
+    <button type="button" class="btn btn-primary" [routerLink]="['/channel/delete', channel.id]">Supprimer</button> <br>
+    <hr>
+    <!-- Affichage des messages -->
+    <button type="button" class="btn btn-primary" [routerLink]="['/channel/listMessages', channel.id]">Afficher les messages</button>
 
-<button type="button" [routerLink]="['/channel/delete', channel.id]">Supprimer</button>  -->
+</div>
 
-<h2>{{channel?.name}}</h2>
-
-<div>Description : {{channel?.description}}</div>
-<div>Date de création : {{channel?.createdAt}}</div>
-<div>Date de modification : {{channel?.updatedAt}}</div>
-
-<!-- Boutons de gestion du canal -->
-<button type="button" [routerLink]="['/channel/put', channel.id]">Modifier</button><br>
-<button type="button" [routerLink]="['/channel/delete', channel.id]">Supprimer</button> 
-
-<!-- Affichage des messages -->
-<button type="button" [routerLink]="['/channel/listMessages', channel.id]">Afficher les messages</button>
 
 

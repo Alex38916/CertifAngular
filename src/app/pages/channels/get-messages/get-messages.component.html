@@ -1,17 +1,34 @@
-<h2>Messages : </h2>
+<div class="container">
+    
+    <h3>Messages : </h3>
 
+    <!-- Liste des Messages du canal -->
+    <section>  
+        <ul *ngIf="messages.length; else noChannelMessage">
+            <li *ngFor="let message of messages; let i = index" class="listMessages">
+                <span *ngIf="i%2==0;then pairMessageTheme ;else impairMessageTheme"></span>
+                <ng-template #pairMessageTheme>
+                    <div class="chat darker">{{ message.content }}</div>
+                </ng-template>
+                
+                <ng-template #impairMessageTheme>
+                    <div class="chat">{{ message.content }}</div>
+                </ng-template>
+            </li>
+        </ul>
+        
+        <ng-template #noChannelMessage>
+            <div>Aucun message dans ce canal, n'hésitez pas à en ajouter !</div>
+        </ng-template>
 
-<!-- Liste des Messages du canal -->
-<ul *ngIf="messages.length; else noChannelMessage">
-    <li *ngFor="let message of messages; let i = index">
-        <div>{{ message.content }}</div>
-    </li>
-</ul>
+    </section>
 
-<ng-template #noChannelMessage>
-    <div>Aucun message dans ce canal, n'hésitez pas à en ajouter !</div>
-</ng-template>
+    
+    
+    <!-- Lien vers l'ajout d'un message -->
+    <section>
+        <button type="button" class="btn btn-primary" routerLink="/message/post">Rédiger un message</button>
+    </section>
+  
 
-
-<!-- Lien vers l'ajout d'un message -->
-<a routerLink="/message/post">Rédiger un message</a>
+</div>

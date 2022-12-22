@@ -1,12 +1,15 @@
 
 html {
     font-size: 14px;
-    font-family: 'PT Sans', Georgia, serif; }
+    font-family: 'PT Sans', Georgia, serif; 
+}
+
 
 body{
      background-color: #f4f7f6;
     margin-top:20px;
 }
+
 
 .navbar-brand {
      position: fixed;
@@ -16,5 +19,66 @@ body{
     width: 100%;
     height: 50px;
     background: cadetblue;
+}
+
+/* Top navbar */
+.navbar-brand {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 50px;
+    background: cadetblue;
+}
+
+.logo {
+    height: 40px;
+    width: 40px;
+}
+
+.navbar-header a {
+    font-weight: bold;
+}
+
+.menu a {
+    display: inline-block;
+}
+
+
+footer {
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 50px;
+}
+
+
+/* Liste des messages d'un canal */
+/* Chat containers */
+.chat {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+
+    border-radius: 4px;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin: 0 auto 40px;
+    max-width: 400px;
+    padding: 15px;
+    position: relative;
+   
+  }
+  
+/* Darker chat container */
+.darker {
+    border-color: rgb(147, 202, 247);
+    background-color: rgb(147, 202, 247);
+}
+
+/* List */
+.listMessages {
+    list-style: none;
 }
 
