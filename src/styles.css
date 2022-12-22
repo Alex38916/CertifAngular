@@ -1,16 +1,16 @@
-
 html {
     font-size: 14px;
     font-family: 'PT Sans', Georgia, serif; }
 
 body{
-     background-color: #f4f7f6;
+    background-color: #f4f7f6;
     margin-top:20px;
 }
 
+/* Top navbar */
 .navbar-brand {
-     position: fixed;
-     top: 0px;
+    position: fixed;
+    top: 0px;
     left: 0px;
     right: 0px;
     width: 100%;
@@ -18,3 +18,28 @@ body{
     background: cadetblue;
 }
 
+/* Formulaire ajout message */
+
+.card {
+    background-color: rgb(53, 109, 126);
+    text-align: left;
+    padding: 1em 2em;
+    width: 35em;
+}
+
+label, p {
+    color: white;
+}
+
+.btn {
+    margin-left: 170px;
+    height: 35px;
+    color: black;
+    background-color: rgb(138, 230, 233);
+    border: 2px solid rgb(84, 175, 179);
+}
+
+.btn:hover {
+    background-color: rgb(105, 172, 173);
+    border-color: rgb(76, 124, 126);
+}
