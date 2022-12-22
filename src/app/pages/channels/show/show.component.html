@@ -1,1 +1,11 @@
-<p>show works!</p>
+<h2>{{channel?.name}}</h2>
+
+<div>Description : {{channel?.description}}</div>
+<div>Date de création : {{channel?.createdAt}}</div>
+<div>Date de modification : {{channel?.updatedAt}}</div>
+
+<button type="button" [routerLink]="['/channel/put', channel.id]">Modifier</button><br>
+
+<button type="button" [routerLink]="['/channel/delete', channel.id]">Supprimer</button> 
+
+
