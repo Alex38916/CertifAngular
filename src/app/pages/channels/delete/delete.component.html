@@ -1,7 +1,15 @@
 <div class="container">
     <h2>Supprimer un canal</h2>
 
-    supprimer le canal : {{ channel.name }} 
 
-    <button type="button" class="btn btn-primary btn-block" (click)="proceedToDelete()">Yes</button>
+    <span *ngIf="channel.id==1; else proceedDelete">
+        Vous ne pouvez pas supprimer le canal principal
+    </span>
+
+    <ng-template #proceedDelete>
+        supprimer le canal : {{ channel.name }} 
+        <button type="button" class="btn btn-primary btn-block" (click)="proceedToDelete()">Yes</button>
+    </ng-template>
+
+   
 </div>

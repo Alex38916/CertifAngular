@@ -12,6 +12,7 @@ export class ListComponent implements OnInit {
 
   public pageTitle: string = "Messages";
   public messages: any[] = [];
+  public user?: any;
 
   constructor(
     private messageService: MessageService
