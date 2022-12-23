@@ -1,14 +1,21 @@
-<h2>{{ pageTitle }}</h2>
+<!-- <h2>{{ pageTitle }}</h2> -->
+
+<!-- Lien vers l'ajout d'un message -->
+<!-- <a routerLink="/message/post">Rédiger un message</a> -->
+
+<!-- Liste des messages -->
+<!-- <ul *ngIf="messages.length; else noMessageMessage">
+<h2 class="title-add-message">{{ pageTitle }}</h2>
 
 <!-- Lien vers l'ajout d'un message -->
 <!-- <a href="/message/post">Rédiger un message</a> -->
-<a routerLink="/message/post">Rédiger un message</a>
+<a routerLink="/message/post" class="link-add-message">Rédiger un message</a>
 
 <!-- Lien déclencheur du modal d'ajout -->
 <!-- <a routerLink="/message/post" data-toggle="modal" data-target="#modalAjoutMessage">Rédiger un message</a> -->
 
 <!-- Liste des messages -->
-<ul *ngIf="messages.length; else noMessageMessage">
+<ul class="list-messages" *ngIf="messages.length; else noMessageMessage">
     <li *ngFor="let message of messages; let i = index">
         <a [routerLink]="['/message/list', message.id]">{{message.createdAt}} {{ message.content }}</a>
     </li>
@@ -16,4 +23,40 @@
 
 <ng-template #noMessageMessage>
     <div>Aucun Utilisateur en BDD</div>
-</ng-template>
+</ng-template> -->
+
+
+<div class="container">
+    
+    <h3>Messages : </h3>
+
+    <!-- Liste des Messages du canal -->
+    <section>  
+        <ul *ngIf="messages.length; else noChannelMessage">
+            <li *ngFor="let message of messages; let i = index" class="listMessages">
+                <span *ngIf="i%2==0;then pairMessageTheme ;else impairMessageTheme"></span>
+                <ng-template #pairMessageTheme>
+                    <div class="chat darker">{{ message.content }}</div>
+                </ng-template>
+                
+                <ng-template #impairMessageTheme>
+                    <div class="chat">{{ message.content }}</div>
+                </ng-template>
+            </li>
+        </ul>
+        
+        <ng-template #noChannelMessage>
+            <div>Aucun message dans ce canal, n'hésitez pas à en ajouter !</div>
+        </ng-template>
+
+    </section>
+
+    
+    
+    <!-- Lien vers l'ajout d'un message -->
+    <section>
+        <button type="button" class="btn btn-primary" routerLink="/message/post">Rédiger un message</button>
+    </section>
+  
+
+</div>

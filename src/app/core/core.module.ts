@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PagesRoutingModule } from '../pages/pages-routing.module';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 
 
@@ -11,7 +12,8 @@ import { PagesRoutingModule } from '../pages/pages-routing.module';
   declarations: [
     HeaderComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { PagesRoutingModule } from '../pages/pages-routing.module';
   exports: [
     HeaderComponent,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    SidebarComponent
   ]
 })
 export class CoreModule { }
