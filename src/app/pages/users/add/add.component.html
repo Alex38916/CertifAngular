@@ -1,29 +1,48 @@
-<h2>Ajouter un utilisateur</h2>
+<h2 class="title-add-user">Ajouter un utilisateur</h2>
+<br>
 
-<div class="container">
-    <form>
-        <div class="form-group">
-            <label for="lastname">Nom</label>
-            <input type="text" class="form-control" id="lastname" [formControl]="form.controls.lastname">
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-container-user">
+            <form>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="lastname">Nom</label>
+                        <input type="text" class="form-control" id="lastname" [formControl]="form.controls.lastname">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="firstname">Prénom</label>
+                        <input type="text" class="form-control" id="firstname" [formControl]="form.controls.firstname">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="pseudo">Pseudo</label>
+                        <input type="text" class="form-control" id="pseudo" [formControl]="form.controls.pseudo">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" [formControl]="form.controls.email">
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" class="form-control" id="password" [formControl]="form.controls.password">
+                    </div>
+                </div><br>
+
+                <div class="form-group w-50">
+                    <button type="submit" class="btn btn-primary btn-block" (click)="submitUser()">
+                        Envoyer
+                    </button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="firstname">Prénom</label>
-            <input type="text" class="form-control" id="firstname" [formControl]="form.controls.firstname">
-        </div>
-        <div class="form-group">
-            <label for="pseudo">Pseudo</label>
-            <input type="text" class="form-control" id="pseudo" [formControl]="form.controls.pseudo">
-        </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" [formControl]="form.controls.email">
-        </div>
-        <div class="form-group">
-            <label for="password">Mot de passe</label>
-            <input type="password" class="form-control" id="password" [formControl]="form.controls.password">
-        </div>
-        <div>
-            <button type="submit" class="btn btn-primary"  (click)="submitUser()">Envoyer</button>
-        </div>
-    </form>
+    </div>
 </div>
+

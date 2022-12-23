@@ -1,4 +1,5 @@
 
+
 html {
     font-size: 14px;
     font-family: 'PT Sans', Georgia, serif; 
@@ -6,29 +7,19 @@ html {
 
 
 body{
-     background-color: #f4f7f6;
+    background-color: #f4f7f6;
     margin-top:20px;
 }
 
-
-.navbar-brand {
-     position: fixed;
-     top: 0px;
-    left: 0px;
-    right: 0px;
-    width: 100%;
-    height: 50px;
-    background: cadetblue;
-}
-
 /* Top navbar */
+
 .navbar-brand {
     position: fixed;
     top: 0px;
     left: 0px;
     right: 0px;
     width: 100%;
-    height: 50px;
+    height: 55px;
     background: cadetblue;
 }
 
@@ -45,14 +36,131 @@ body{
     display: inline-block;
 }
 
+/* Add a black background color to the top navigation */
+.navbar-body {
+    background-color: #333;
+    overflow: hidden;
+}
+  
+/* Style the links inside the navigation bar */
+.navbar-body a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+  
+/* Change the color of links on hover */
+.navbar-body a:hover {
+    background-color: #ddd;
+    color: black;
+}
 
-footer {
-    bottom: 0px;
+/* Sidebar */
+/* The side navigation menu */
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: rgb(67, 80, 117);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+  
+/* Sidebar links */
+.sidebar a, .sidebar span {
+    display: block;
+    color: white;
+    font-weight: bold;
+    padding: 16px;
+    text-decoration: none;
+}
+  
+/* Active/current link */
+.sidebar a.active {
+    background-color: rgb(94, 113, 165);
+    color: white;
+}
+  
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+    background-color: rgb(50, 60, 88);
+    color: white;
+}
+
+.sidebar li {
+    list-style: none;
+}
+
+/* Formulaire ajout message */
+
+.card {
+    background-color: rgb(53, 109, 126);
+    text-align: left;
+    padding: 1em 2em;
+    width: 31em;
+    height: 28em;
+    margin-left: 32em;
+}
+
+.card-container-user {
+    height: 33em;
+}
+
+label, p {
+    color: white;
+}
+
+.btn {
+    margin-left: 160px;
+    height: 35px;
+    color: black;
+    background-color: rgb(138, 230, 233);
+    border: 2px solid rgb(84, 175, 179);
+}
+
+.btn:hover {
+    background-color: rgb(105, 172, 173);
+    border-color: rgb(76, 124, 126);
+}
+/* Top navbar */
+.navbar-brand {
+
+    position: fixed;
+    top: 0px;
     left: 0px;
     right: 0px;
     width: 100%;
     height: 50px;
+    background: cadetblue;
 }
+
+.logo {
+    height: 40px;
+    width: 40px;
+}
+
+
+
+.navbar-header a {
+    font-weight: bold;
+}
+
+.menu a {
+    display: inline-block;
+}
+
+
+.footer {
+    position:relative;
+    bottom:0;  /* on le colle en bas */
+    width:100%;
+    height:100px;   /* Hauteur du pied de page */
+ }
+
 
 
 /* Liste des messages d'un canal */
@@ -82,3 +190,120 @@ footer {
     list-style: none;
 }
 
+
+.title-add-message, .title-add-channel, .title-add-user,
+.title-edit-channel, .title-edit-message, .title-edit-user,
+.title-show-channel, .form-show-channel {
+    text-align: center;
+}
+
+.link-add-channel, .list-channels, #form-channel {
+    margin-left: 42em;
+}
+
+.link-add-user, .list-users {
+    margin-left: 42em;
+}
+
+.link-add-message, .list-messages {
+    margin-left: 43em;
+}
+
+.btn-add-channel {
+    background-color: rgb(67, 80, 117);
+    color: white;
+    border: 1px solid rgb(67, 80, 117);
+    margin-left: 10px;
+    font-weight: bold;
+}
+/* dropdown */
+
+ 
+  main {
+    margin: 0px;
+    width: 500px;
+  }
+ 
+  .dropdown {
+    width: 230px;
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+  }
+ 
+  .dropdown > a > label {
+    border-radius: 2px;
+    box-shadow: 0 6px 5px -5px rgba(0,0,0,0.3);
+  }
+  .dropdown > a::after, .dropdown.toggle > label::after {
+    content: "";
+    float: right;
+    margin: 15px 15px 0 0;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #CCC;
+  }
+  .dropdown ul {
+    list-style-type: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 6px 5px -5px rgba(0,0,0,0.3);
+    overflow: hidden;
+  }
+  .dropdown a, .dropdown.toggle > label {
+    display: block;
+    padding: 0 0 0 10px;
+    text-decoration: none;
+    line-height: 40px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #999;
+    background-color: #FFF;
+  }
+  .dropdown li {
+    height: 0;
+    overflow: hidden;
+    transition: all 500ms;
+  }
+  .dropdown.hover li {
+    transition-delay: 300ms;
+  }
+  .dropdown li:first-child a {
+    border-radius: 2px 2px 0 0;
+  }
+  .dropdown li:last-child a {
+    border-radius: 0 0 2px 2px;
+  }
+  .dropdown li:first-child a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #FFF;
+    margin: -10px 0 0 30px;
+  }
+  .dropdown a:hover, .dropdown.toggle > label:hover, .dropdown.toggle > input:checked ~ label {
+    background-color: #EEE;
+    color: #666;
+  }
+  .dropdown > a:hover::after, .dropdown.toggle > label:hover::after, .dropdown.toggle > input:checked ~ label::after {
+    border-top-color: #AAA;
+  }
+  .dropdown li:first-child a:hover::before {
+    border-bottom-color: #EEE;
+  }
+  .dropdown.hover:hover li, .dropdown.toggle > input:checked ~ ul li {          
+    height: 40px;
+  }
+  .dropdown.hover:hover li:first-child, .dropdown.toggle > input:checked ~ ul li:first-child {
+    padding-top: 15px;
+  }
