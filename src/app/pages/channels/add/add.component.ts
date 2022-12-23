@@ -27,7 +27,10 @@ export class AddComponent {
 
   public submitChannel(): void {
     this.channelService.createChannel(url, this.form.value);
-    this.router.navigate(['/channel/list']);
+    setTimeout(()=>{
+      this.router.navigate(['/channel/list']);
+    }, 1000);
+    
   }
 
 

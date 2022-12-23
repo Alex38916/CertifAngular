@@ -1,31 +1,3 @@
-<!-- <h2>{{ pageTitle }}</h2> -->
-
-<!-- Lien vers l'ajout d'un message -->
-<!-- <a routerLink="/message/post">Rédiger un message</a> -->
-
-<!-- Liste des messages -->
-<!-- <ul *ngIf="messages.length; else noMessageMessage">
-<h2 class="title-add-message">{{ pageTitle }}</h2>
-
-<!-- Lien vers l'ajout d'un message -->
-<!-- <a href="/message/post">Rédiger un message</a> -->
-<a routerLink="/message/post" class="link-add-message">Rédiger un message</a>
-
-<!-- Lien déclencheur du modal d'ajout -->
-<!-- <a routerLink="/message/post" data-toggle="modal" data-target="#modalAjoutMessage">Rédiger un message</a> -->
-
-<!-- Liste des messages -->
-<ul class="list-messages" *ngIf="messages.length; else noMessageMessage">
-    <li *ngFor="let message of messages; let i = index">
-        <a [routerLink]="['/message/list', message.id]">{{message.createdAt}} {{ message.content }}</a>
-    </li>
-</ul>
-
-<ng-template #noMessageMessage>
-    <div>Aucun Utilisateur en BDD</div>
-</ng-template> -->
-
-
 <div class="container">
     
     <h3>Messages : </h3>
@@ -36,11 +8,19 @@
             <li *ngFor="let message of messages; let i = index" class="listMessages">
                 <span *ngIf="i%2==0;then pairMessageTheme ;else impairMessageTheme"></span>
                 <ng-template #pairMessageTheme>
-                    <div class="chat darker">{{ message.content }}</div>
+                    <div class="chat darker">{{ message.content }}
+                        <br>
+                        <a [routerLink]="['/message/put', message.id]"><img src="/assets/edit.png" alt="modifier" class="imagesModif"></a>
+                        <a [routerLink]="['/message/delete', message.id]"><img src="/assets/supprimer.png" alt="supprimer"  class="imagesModif"></a>
+                    </div>
                 </ng-template>
                 
                 <ng-template #impairMessageTheme>
-                    <div class="chat">{{ message.content }}</div>
+                    <div class="chat">{{ message.content }}
+                        <br>
+                        <a [routerLink]="['/message/put', message.id]"><img src="/assets/edit.png" alt="modifier" class="imagesModif"></a>
+                        <a [routerLink]="['/message/delete', message.id]"><img src="/assets/supprimer.png" alt="supprimer"  class="imagesModif"></a>
+                    </div>
                 </ng-template>
             </li>
         </ul>

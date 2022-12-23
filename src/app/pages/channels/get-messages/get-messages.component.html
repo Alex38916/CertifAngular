@@ -8,11 +8,19 @@
             <li *ngFor="let message of messages; let i = index" class="listMessages">
                 <span *ngIf="i%2==0;then pairMessageTheme ;else impairMessageTheme"></span>
                 <ng-template #pairMessageTheme>
-                    <div class="chat darker">{{ message.content }}</div>
+                    <div class="chat darker">{{ message.content }}
+                        <br>
+                        <a [routerLink]="['/message/put', message.id]"><img src="/assets/edit.png" alt="modifier" class="imagesModif"></a>
+                        <a [routerLink]="['/message/delete', message.id]"><img src="/assets/supprimer.png" alt="supprimer"  class="imagesModif"></a>
+                    </div>
                 </ng-template>
                 
                 <ng-template #impairMessageTheme>
-                    <div class="chat">{{ message.content }}</div>
+                    <div class="chat">{{ message.content }}
+                        <br>
+                        <a [routerLink]="['/message/put', message.id]"><img src="/assets/edit.png" alt="modifier" class="imagesModif"></a>
+                        <a [routerLink]="['/message/delete', message.id]"><img src="/assets/supprimer.png" alt="supprimer"  class="imagesModif"></a>
+                    </div>
                 </ng-template>
             </li>
         </ul>
