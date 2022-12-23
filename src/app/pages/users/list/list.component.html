@@ -1,18 +1,21 @@
 <div class="container">
-    <h2 class="title-add-user">{{ pageTitle }}</h2>
+    <div class="box">
+        <h2 class="box-header">{{ pageTitle }}</h2>
 
-    <!-- Lien vers l'ajout d'un utilisateur -->
-    <a routerLink="/user/post" class="link-add-user">Ajouter un nouvel utilisateur</a>
-    
-    <!-- Liste des utilisateurs -->
-    <ul class="list-users" *ngIf="users.length; else noBookMessage">
-        <li *ngFor="let user of users; let i = index">
-            <a [routerLink]="['/user/find', user.id]">{{ user.firstname }} {{ user.lastname }}</a>
-        </li>
-    </ul>
-    
-    <ng-template #noBookMessage>
-        <div>Aucun Utilisateur en BDD</div>
-    </ng-template>
+        <!-- Lien vers l'ajout d'un utilisateur -->
+        <button type="button" routerLink="/user/post" class="link-add-user">Ajouter un nouvel utilisateur</button>
+        
+        <!-- Liste des utilisateurs -->
+        <ul class="list" *ngIf="users.length; else noBookMessage">
+            <li *ngFor="let user of users; let i = index" class="item">
+                <a [routerLink]="['/user/find', user.id]">{{ user.firstname }} {{ user.lastname }}</a>
+            </li>
+        </ul>
+        
+        <ng-template #noBookMessage>
+            <div>Aucun Utilisateur en BDD</div>
+        </ng-template>
+    </div>
+   
 </div>
 
