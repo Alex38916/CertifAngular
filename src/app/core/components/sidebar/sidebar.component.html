@@ -1,0 +1,12 @@
+<div class="sidebar">
+    <a class="active" [routerLink]="['/']">Général</a>
+    <span>Canaux</span>
+        <ul>
+            <li *ngFor="let channel of channels; let i = index">
+                <a [routerLink]="['/channel/find', channel.id]">{{ channel.name }}</a>
+            </li>
+        </ul>
+        <button type="submit" routerLink="/channel/post" class="btn-add-channel">Ajouter un canal</button>
+    <a [routerLink]="['/user/list']">Utilisateurs</a>
+    <a [routerLink]="['/message/list']">Messages</a>
+</div>

@@ -1,7 +1,5 @@
-<h2>Ajouter un message</h2>
- 
- <div class="container">
-    <form>
+<h2 class="title-add-message">Ajouter un message</h2>
+<br>
 
         <div class="form-group">
             <label for="content">Ecrivez votre message : </label>
@@ -79,10 +77,23 @@
                             </span>
                             Valider
                         </button>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-container-message">
+            <form>
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <label for="content">Contenu</label>
+                        <textarea class="form-control" id="content" [formControl]="form.controls.content"></textarea>
                     </div>
-                    </div>
-                </form>
-            </div>
+                </div><br>
+
+                <div class="form-group w-50">
+                    <button type="button" class="btn btn-primary btn-block" (click)="submitMessage()">
+                        Valider 
+                    </button>
+                </div>
+            </form>
         </div>
-    </div>
-</div> -->
+    </div>   
+</div>
