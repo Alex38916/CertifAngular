@@ -6,7 +6,7 @@
     <div>Date de modification : {{channel?.updatedAt}}</div>
 
     <!-- Boutons de gestion du canal -->
-    <button  type="button" class="btn btn-primary" [routerLink]="['/channel/put', channel.id]">Modifier</button>   
+    <button  type="button" class="btn btn-primary" [routerLink]="['/channel/put', channel.id]">Modifier</button> <span>  </span>  
     <button type="button" class="btn btn-primary" [routerLink]="['/channel/delete', channel.id]">Supprimer</button> <br>
     <hr>
     <!-- Affichage des messages -->
