@@ -1,46 +1,48 @@
-<h2 class="title-add-channel">Ajouter un canal</h2>
-<br>
-
-<div class="row">
-    <div class="col-md-6">
-        <div class="card card-container-channel" id="form-channel">
-            <form>
-                <!-- Nom du canal -->
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <label for="name">Nom</label>
-                        <input type="text" class="form-control" id="name" [formControl]="form.controls.name">
+<div class="container">
+    <h2 class="title-add-channel">Ajouter un canal</h2>
+    <br>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-container-channel" id="form-channel">
+                <form>
+                    <!-- Nom du canal -->
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="name">Nom</label>
+                            <input type="text" class="form-control" id="name" [formControl]="form.controls.name">
+                        </div>
+                    </div><br>
+                    
+                    <!-- Description du canal -->
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="description">Description</label>
+                            <input type="text" class="form-control" id="description" [formControl]="form.controls.description">
+                        </div>
+                    </div><br>
+    
+                    <!-- TODO1 : mettre des dates et heures par défaut pour la date de création et de modification-->
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="createdAt">Date de création</label>
+                            <input type="text" class="form-control" id="createdAt" [formControl]="form.controls.createdAt">
+                        </div>
+                    </div><br>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label for="updatedAt">Date de modification</label>
+                            <input type="text" class="form-control" id="updatedAt" [formControl]="form.controls.updatedAt">
+                        </div>
+                    </div><br>
+    
+                    <div class="form-group w-50">
+                        <button type="submit" class="btn btn-primary btn-block" (click)="submitChannel()">
+                            Envoyer
+                        </button>
                     </div>
-                </div><br>
-                
-                <!-- Description du canal -->
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <label for="description">Description</label>
-                        <input type="text" class="form-control" id="description" [formControl]="form.controls.description">
-                    </div>
-                </div><br>
-
-                <!-- TODO1 : mettre des dates et heures par défaut pour la date de création et de modification-->
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <label for="createdAt">Date de création</label>
-                        <input type="text" class="form-control" id="createdAt" [formControl]="form.controls.createdAt">
-                    </div>
-                </div><br>
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <label for="updatedAt">Date de modification</label>
-                        <input type="text" class="form-control" id="updatedAt" [formControl]="form.controls.updatedAt">
-                    </div>
-                </div><br>
-
-                <div class="form-group w-50">
-                    <button type="submit" class="btn btn-primary btn-block" (click)="submitChannel()">
-                        Envoyer
-                    </button>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </div>

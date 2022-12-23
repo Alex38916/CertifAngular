@@ -1,15 +1,18 @@
-<h2 class="title-add-channel">{{ pageTitle }}</h2>
+<div class="container">
+    <h2 class="title-add-channel">{{ pageTitle }}</h2>
 
-<!-- Lien vers l'ajout d'un canal -->
-<a routerLink="/channel/post" class="link-add-channel">Ajouter un nouveau canal</a>
+    <!-- Lien vers l'ajout d'un canal -->
+    <a routerLink="/channel/post" class="link-add-channel">Ajouter un nouveau canal</a>
+    
+    <!-- Liste des canaux -->
+    <ul class="list-channels" *ngIf="channels.length; else noBookMessage">
+        <li *ngFor="let channel of channels; let i = index">
+            <a [routerLink]="['/channel/find', channel.id]">{{ channel.name }}</a>
+        </li>
+    </ul>
+    
+    <ng-template #noBookMessage>
+        <div>Aucun canal en BDD</div>
+    </ng-template>
+</div>
 
-<!-- Liste des canaux -->
-<ul class="list-channels" *ngIf="channels.length; else noBookMessage">
-    <li *ngFor="let channel of channels; let i = index">
-        <a [routerLink]="['/channel/find', channel.id]">{{ channel.name }}</a>
-    </li>
-</ul>
-
-<ng-template #noBookMessage>
-    <div>Aucun canal en BDD</div>
-</ng-template>
