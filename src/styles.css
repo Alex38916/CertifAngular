@@ -307,3 +307,10 @@ label, p {
   .dropdown.hover:hover li:first-child, .dropdown.toggle > input:checked ~ ul li:first-child {
     padding-top: 15px;
   }
+
+
+  /* images de modification et de suppression des messages */
+.imagesModif {
+  height: 30px;
+  width: 30px;
+}
