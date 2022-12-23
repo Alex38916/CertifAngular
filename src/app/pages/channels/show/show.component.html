@@ -8,8 +8,9 @@
 
 <button type="button" [routerLink]="['/channel/delete', channel.id]">Supprimer</button>  -->
 
-<h2>{{channel?.name}}</h2>
+<h2 class="title-show-channel">{{channel?.name}}</h2>
 
+<div class="form-show-channel">
 <div>Description : {{channel?.description}}</div>
 <div>Date de création : {{channel?.createdAt}}</div>
 <div>Date de modification : {{channel?.updatedAt}}</div>
@@ -20,5 +21,5 @@
 
 <!-- Affichage des messages -->
 <button type="button" [routerLink]="['/channel/listMessages', channel.id]">Afficher les messages</button>
-
+</div>
 
